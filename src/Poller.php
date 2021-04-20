@@ -98,14 +98,20 @@ final class Poller
      */
     private function poll(array $arguments, Collection $previousPollResults, int $currentPollCount): PollResult
     {
+        $exception =  null;
+        $result = null;
+
         try {
             $result = $this->pollExecutor->execute($arguments, $previousPollResults, $currentPollCount);
-            $success = $this->pollResultChecker->checkResult($result, $arguments, $previousPollResults, $currentPollCount);
         } catch (Throwable $exception) {
             if (null === $this->pollExceptionChecker) {
                 throw $exception;
             }
+        }
 
+        if (null === $exception) {
+            $success = $this->pollResultChecker->checkResult($result, $arguments, $previousPollResults, $currentPollCount);
+        } else {
             $result = $exception;
             $success = $this->pollExceptionChecker->checkException($exception, $arguments, $previousPollResults, $currentPollCount);
         }
