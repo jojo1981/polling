@@ -1,0 +1,50 @@
+{
+  "name": "jojo1981/polling",
+  "description": "Polling library for conditionally retry operations based on a result checker.",
+  "keywords": [
+    "polling",
+    "poller",
+    "try",
+    "retry",
+    "retries"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "readme": "README.md",
+  "authors": [
+    {
+      "name": "Joost Nijhuis",
+      "email": "jnijhuis81@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^7.4",
+    "jojo1981/contracts": "^1.0",
+    "jojo1981/typed-collection": "^2.1"
+  },
+  "require-dev": {
+    "php-coveralls/php-coveralls": "^2.2",
+    "phpunit/phpunit": "^7.5|^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jojo1981\\Polling\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Jojo1981\\Polling\\TestSuite\\": "tests/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin",
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": [
+      "./bin/phpunit"
+    ]
+  }
+}
