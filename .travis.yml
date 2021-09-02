@@ -1,0 +1,18 @@
+language: php
+
+env:
+  - XDEBUG_MODE="coverage"
+
+php:
+  - '7.4'
+
+before_script: echo 'xdebug.mode=coverage' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+
+before-install:
+  - composer self-update
+
+install:
+  - composer install --dev
+
+after_success:
+  - travis_retry php ./bin/php-coveralls -v
