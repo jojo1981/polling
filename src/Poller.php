@@ -36,7 +36,7 @@ final class Poller
     /** @var PollExceptionChecker|null */
     private ?PollExceptionChecker $pollExceptionChecker;
 
-    private UnsignedInteger $delay; // microseconds
+    private UnsignedInteger $delay; // milliseconds
 
     /** @var PollCount */
     private PollCount $maxPolCount;
