@@ -14,7 +14,7 @@ A simple polling library which retries the poll action as long as the result che
 The executor callback can perform any task you want and can return any result you want.
 The result checker should be able to check whether the result from the executor is successful or not and must return a boolean value.
 Optionally you can add an exception checker. This can be omitted and be handled in the executor, but for separation of concerns you can split this logic.
-The delay in milliseconds can be given and is by default 10000 milliseconds (10 seconds). The delay will be between the retries.
+The delay in microseconds can be given and is by default 10000000 microseconds (10 seconds). The delay will be between the retries.
 The max poll count can be given and is by default 10. The max poll count is the number of times at maximum the executor will be invoked including the first time.
 Default arguments for the executor, result checker, exception checker and start polling can be omitted. This can be handy to keep the callback functions pure.
 
@@ -84,8 +84,8 @@ $pollResultChecker = new PollResultChecker(
     [1] // optionally the default arguments which will be given to the poll result checker callback
 );
 
-// poll delay is expressed in milliseconds, so poll max 5 times with in between 5 seconds delay.
-$poller = new Poller($pollExecutor, $pollResultChecker, null, new UnsignedInteger(5000), new PollCount(5));
+// poll delay is expressed in microseconds, so poll max 5 times with in between 5 seconds delay.
+$poller = new Poller($pollExecutor, $pollResultChecker, null, new UnsignedInteger(5000000), new PollCount(5));
 $finalPollResult = $poller->startPolling(['text1', 'text2']); // start polling with optionally some default arguments
 
 $finalPollResult->getCount(); // Will return the number of poll retries including the first one. Value: 3 in this case.

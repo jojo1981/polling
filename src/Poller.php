@@ -36,7 +36,7 @@ final class Poller
     /** @var PollExceptionChecker|null */
     private ?PollExceptionChecker $pollExceptionChecker;
 
-    private UnsignedInteger $delay; // milliseconds
+    private UnsignedInteger $delay; // microseconds
 
     /** @var PollCount */
     private PollCount $maxPolCount;
@@ -59,7 +59,7 @@ final class Poller
         $this->pollExecutor = $pollExecutor;
         $this->pollResultChecker = $pollResultChecker;
         $this->pollExceptionChecker = $pollExceptionChecker;
-        $this->delay = $delay ?? new UnsignedInteger(10000); // 10 seconds delay
+        $this->delay = $delay ?? new UnsignedInteger(10000000); // 10 seconds delay
         $this->maxPolCount = $maxPolCount ?? new PollCount(10);
     }
 

@@ -21,7 +21,7 @@ use function sprintf;
 /**
  * @package Jojo1981\Polling\Value
  */
-class PollCount implements ValueInterface, HashableInterface
+final class PollCount implements ValueInterface, HashableInterface
 {
     /** @var int */
     private int $value;

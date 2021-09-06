@@ -20,7 +20,7 @@ use function sprintf;
 /**
  * @package Jojo1981\Polling\Value
  */
-class UnsignedInteger implements ValueInterface, HashableInterface
+final class UnsignedInteger implements ValueInterface, HashableInterface
 {
     /** @var int */
     private int $value;
