@@ -22,7 +22,7 @@
   "require": {
     "php": "^7.4|^8.0",
     "jojo1981/contracts": "^1.0",
-    "jojo1981/typed-collection": "^3.0"
+    "jojo1981/typed-collection": "^3.0|^4.0"
   },
   "require-dev": {
     "dg/bypass-finals": "^1.3",
