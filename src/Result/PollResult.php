@@ -11,10 +11,11 @@ namespace Jojo1981\Polling\Result;
 
 /**
  * @package Jojo1981\Polling\Result
+ * @template T
  */
 final class PollResult
 {
-    /** @var mixed */
+    /** @var T */
     private $result;
 
     /** @var bool */
@@ -24,7 +25,7 @@ final class PollResult
     private int $count;
 
     /**
-     * @param mixed $result
+     * @param T $result
      * @param bool $success
      * @param int $count
      */
@@ -36,7 +37,7 @@ final class PollResult
     }
 
     /**
-     * @return mixed
+     * @return T
      */
     public function getResult()
     {

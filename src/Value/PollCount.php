@@ -53,16 +53,15 @@ final class PollCount implements ValueInterface, HashableInterface
     }
 
     /**
-     * @param int $value
+     * @param mixed $value
      * @return int
      * @throws ValueExceptionInterface
      */
-    private function assertValue(int $value): int
+    private function assertValue($value): int
     {
         if (!is_int($value)) {
             throw new ValueException('Value for PollCount should be be of type integer');
         }
-
         if ($value < 1) {
             throw new ValueException(sprintf('Value for PollCount should be higher than or equals 1. Given value: `%d`.', $value));
         }

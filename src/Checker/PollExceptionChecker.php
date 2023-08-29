@@ -18,6 +18,7 @@ use function call_user_func;
 
 /**
  * @package Jojo1981\Polling\Checker
+ * @template T
  */
 class PollExceptionChecker
 {
@@ -40,7 +41,7 @@ class PollExceptionChecker
     /**
      * @param Throwable $exception
      * @param array $arguments
-     * @param Collection|PollResult[] $previousResults
+     * @param Collection<PollResult<T>> $previousResults
      * @param int $currentPollCount
      * @return bool
      */

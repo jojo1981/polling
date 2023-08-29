@@ -17,6 +17,7 @@ use function call_user_func;
 
 /**
  * @package Jojo1981\Polling\Executor
+ * @template T
  */
 final class PollExecutor
 {
@@ -38,9 +39,9 @@ final class PollExecutor
 
     /**
      * @param array $arguments
-     * @param Collection|PollResult[] $previousResults
+     * @param Collection<PollResult> $previousResults
      * @param int $currentPollCount
-     * @return mixed
+     * @return T
      */
     public function execute(array $arguments, Collection $previousResults, int $currentPollCount)
     {

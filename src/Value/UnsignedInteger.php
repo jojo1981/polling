@@ -69,7 +69,6 @@ final class UnsignedInteger implements ValueInterface, HashableInterface
         if (!is_int($value)) {
             throw new ValueException('Value for UnsignedInteger should be be of type integer');
         }
-
         if ($value < 0) {
             throw new ValueException(sprintf('Value for UnsignedInteger should be higher than or equals zero. Given value: `%d`.', $value));
         }

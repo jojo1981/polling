@@ -24,27 +24,29 @@ use function usleep;
 
 /**
  * @package Jojo1981\Polling
+ * @template T
  */
 final class Poller
 {
-    /** @var PollExecutor */
+    /** @var PollExecutor<T> */
     private PollExecutor $pollExecutor;
 
-    /** @var PollResultChecker */
+    /** @var PollResultChecker<T> */
     private PollResultChecker $pollResultChecker;
 
-    /** @var PollExceptionChecker|null */
+    /** @var PollExceptionChecker<T>|null */
     private ?PollExceptionChecker $pollExceptionChecker;
 
+    /** @var UnsignedInteger */
     private UnsignedInteger $delay; // microseconds
 
     /** @var PollCount */
     private PollCount $maxPolCount;
 
     /**
-     * @param PollExecutor $pollExecutor
-     * @param PollResultChecker $pollResultChecker
-     * @param PollExceptionChecker|null $pollExceptionChecker
+     * @param PollExecutor<T> $pollExecutor
+     * @param PollResultChecker<T> $pollResultChecker
+     * @param PollExceptionChecker<T>|null $pollExceptionChecker
      * @param UnsignedInteger|null $delay
      * @param PollCount|null $maxPolCount
      * @throws ValueExceptionInterface
@@ -65,7 +67,7 @@ final class Poller
 
     /**
      * @param array $arguments
-     * @return PollResult
+     * @return PollResult<T>
      * @throws CollectionException
      * @throws Throwable
      */
@@ -91,7 +93,7 @@ final class Poller
 
     /**
      * @param array $arguments
-     * @param Collection|PollResult[] $previousPollResults
+     * @param Collection<PollResult<T>> $previousPollResults
      * @param int $currentPollCount
      * @return PollResult
      * @throws Throwable

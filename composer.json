@@ -20,7 +20,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "php": "^8.0",
+    "php": "^7.4|^8.0",
     "jojo1981/contracts": "^1.0",
     "jojo1981/typed-collection": "^5.0"
   },

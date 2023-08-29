@@ -17,6 +17,7 @@ use function call_user_func;
 
 /**
  * @package Jojo1981\Polling\Checker
+ * @template T
  */
 final class PollResultChecker
 {
@@ -39,7 +40,7 @@ final class PollResultChecker
     /**
      * @param mixed $result
      * @param array $arguments
-     * @param Collection|PollResult[] $previousResults
+     * @param Collection<PollResult<T>> $previousResults
      * @param int $currentPollCount
      * @return bool
      */
