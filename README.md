@@ -1,7 +1,7 @@
 Polling library for conditionally retry operations based on a result checker.
 =====================
 
-[![Build Status](https://travis-ci.com/jojo1981/polling.svg?branch=master)](https://travis-ci.com/jojo1981/polling)
+[![Build Status](https://github.com/jojo1981/polling/actions/workflows/build.yml/badge.svg)](https://github.com/jojo1981/polling/actions/workflows/build.yml)
 [![Coverage Status](https://coveralls.io/repos/github/jojo1981/polling/badge.svg)](https://coveralls.io/github/jojo1981/polling)
 [![Latest Stable Version](https://poser.pugx.org/jojo1981/polling/v/stable)](https://packagist.org/packages/jojo1981/polling)
 [![Total Downloads](https://poser.pugx.org/jojo1981/polling/downloads)](https://packagist.org/packages/jojo1981/polling)
