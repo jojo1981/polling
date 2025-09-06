@@ -31,15 +31,7 @@ final class UnsignedInteger implements ValueInterface, HashableInterface
      */
     public function __construct($value)
     {
-        $this->value = $this->assertValue($value);
-    }
-
-    /**
-     * @return int
-     */
-    public function getValue(): int
-    {
-        return $this->value;
+        $this->value = self::assertValue($value);
     }
 
     /**
@@ -49,6 +41,14 @@ final class UnsignedInteger implements ValueInterface, HashableInterface
     public function match(ValueInterface $otherValue): bool
     {
         return $otherValue instanceof self && $otherValue->getValue() === $this->getValue();
+    }
+
+    /**
+     * @return int
+     */
+    public function getValue(): int
+    {
+        return $this->value;
     }
 
     /**
@@ -64,7 +64,7 @@ final class UnsignedInteger implements ValueInterface, HashableInterface
      * @return int
      * @throws ValueExceptionInterface
      */
-    private function assertValue($value): int
+    private static function assertValue($value): int
     {
         if (!is_int($value)) {
             throw new ValueException('Value for UnsignedInteger should be be of type integer');
