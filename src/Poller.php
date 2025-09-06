@@ -100,7 +100,7 @@ final class Poller
      */
     private function poll(array $arguments, Collection $previousPollResults, int $currentPollCount): PollResult
     {
-        $exception =  null;
+        $exception = null;
         $result = null;
 
         try {

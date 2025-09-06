@@ -36,23 +36,6 @@ final class PollCount implements ValueInterface, HashableInterface
     }
 
     /**
-     * @return int
-     */
-    public function getValue(): int
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param ValueInterface $otherValue
-     * @return bool
-     */
-    public function match(ValueInterface $otherValue): bool
-    {
-        return get_class($this) === get_class($otherValue) && $otherValue->getValue() === $this->getValue();
-    }
-
-    /**
      * @param mixed $value
      * @return int
      * @throws ValueExceptionInterface
@@ -67,6 +50,23 @@ final class PollCount implements ValueInterface, HashableInterface
         }
 
         return $value;
+    }
+
+    /**
+     * @param ValueInterface $otherValue
+     * @return bool
+     */
+    public function match(ValueInterface $otherValue): bool
+    {
+        return get_class($this) === get_class($otherValue) && $otherValue->getValue() === $this->getValue();
+    }
+
+    /**
+     * @return int
+     */
+    public function getValue(): int
+    {
+        return $this->value;
     }
 
     /**
