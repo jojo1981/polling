@@ -20,6 +20,7 @@ use function sprintf;
 
 /**
  * @package Jojo1981\Polling\Value
+ * @implements ValueInterface<int>
  */
 final class PollCount implements ValueInterface, HashableInterface
 {
@@ -40,7 +41,7 @@ final class PollCount implements ValueInterface, HashableInterface
      * @return int
      * @throws ValueExceptionInterface
      */
-    private function assertValue($value): int
+    private function assertValue(mixed $value): int
     {
         if (!is_int($value)) {
             throw new ValueException('Value for PollCount should be be of type integer');
