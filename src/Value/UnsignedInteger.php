@@ -19,6 +19,7 @@ use function sprintf;
 
 /**
  * @package Jojo1981\Polling\Value
+ * @implements ValueInterface<int>
  */
 final class UnsignedInteger implements ValueInterface, HashableInterface
 {
@@ -64,7 +65,7 @@ final class UnsignedInteger implements ValueInterface, HashableInterface
      * @return int
      * @throws ValueExceptionInterface
      */
-    private static function assertValue($value): int
+    private static function assertValue(mixed $value): int
     {
         if (!is_int($value)) {
             throw new ValueException('Value for UnsignedInteger should be be of type integer');
